@@ -1,8 +1,6 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
-import 'HomePage.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -83,10 +81,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  AssetImage _buildUserImage() {
-    return const AssetImage('assets/BookReading.jpg');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                   )
                   // const Image(image: AssetImage('assets/userIconImage.jpg')),
                   ),
-              Text(
+              const Text(
                 "Let's Get Started",
                 textAlign: TextAlign.end,
                 style: TextStyle(
@@ -130,8 +124,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: _buildConfirmPasswordField(),
               ),
               InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const HomePage()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -140,9 +135,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   height: 30,
                   width: 250,
-                  child: Column(
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         'Sign Up',
                         style: TextStyle(color: Colors.white),
@@ -153,11 +148,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const Padding(padding: EdgeInsets.all(10.0)),
               const Text('You can continue with'),
-              Padding(
+              const Padding(
                 padding:
-                    const EdgeInsets.only(left: 80.0, top: 20.0, right: 80.0),
+                    EdgeInsets.only(left: 80.0, top: 20.0, right: 80.0),
                 child: Row(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.facebook,
                       color: Colors.indigo,
@@ -172,17 +167,15 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       width: 35,
                       height: 35,
-                      child: Image(
-                          image: AssetImage('assets/GoogleIcon.png')),
+                      child: Image(image: AssetImage('assets/GoogleIcon.png')),
                     ),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 80.0, top: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 80.0, top: 10),
                 child: Row(
-                  children: const [
-
+                  children: [
                     Text('Already Have an account?'),
                     Text(
                       'SignIn',

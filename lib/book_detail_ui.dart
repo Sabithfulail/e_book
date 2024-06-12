@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +8,8 @@ class BookDetailUI extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0, left: 30.0),
+        const Padding(
+          padding: EdgeInsets.only(top: 20.0, left: 30.0),
           child: Row(
             children: [
               Icon(Icons.arrow_back),
@@ -36,7 +34,7 @@ class BookDetailUI extends StatelessWidget {
               Container(
                 height: 170,
                 width: 120,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/TheAngelOfRome.jpg'),
                         fit: BoxFit.fill),
@@ -50,16 +48,16 @@ class BookDetailUI extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: 1000,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: CupertinoColors.extraLightBackgroundGray,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30.0),
                     topRight: Radius.circular(30.0))),
             child: Column(
               children: [
-                Row(children: [
+                const Row(children: [
                   Padding(
-                    padding: const EdgeInsets.all(30.0),
+                    padding: EdgeInsets.all(30.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -98,84 +96,78 @@ class BookDetailUI extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(
                           left: 30.0, right: 30.0, top: 10.0),
-                      child: Container(
+                      child: SizedBox(
                         height: 70,
                         width: double.infinity,
                         child: Expanded(
                           child: Row(
                             children: [
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      'Rating',
-                                      style: TextStyle(color: Colors.grey),
-                                    ),
-                                    SizedBox(
-                                      height: 3,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text('5.0',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold)),
-                                        Icon(
-                                          Icons.star,
-                                          color: Colors.yellow[700],
-                                        )
-                                      ],
-                                    ),
-                                  ],
-                                ),
+                              Column(
+                                children: [
+                                  const Text(
+                                    'Rating',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                  const SizedBox(
+                                    height: 3,
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Text('5.0',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.yellow[700],
+                                      )
+                                    ],
+                                  ),
+                                ],
                               ),
-                              VerticalDivider(
+                              const VerticalDivider(
                                 color: Colors.black,
                                 indent: 5,
                                 endIndent: 15,
                                 width: 60,
                               ),
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      'Page',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                          color: Colors.grey),
-                                    ),
-                                    SizedBox(
-                                      height: 7,
-                                    ),
-                                    Text(
-                                      '220',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                ),
+                              const Column(
+                                children: [
+                                  Text(
+                                    'Page',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.grey),
+                                  ),
+                                  SizedBox(
+                                    height: 7,
+                                  ),
+                                  Text(
+                                    '220',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
                               ),
-                              VerticalDivider(
+                              const VerticalDivider(
                                 color: Colors.black,
                                 indent: 5,
                                 endIndent: 15,
                                 width: 60,
                               ),
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      'Language',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                          color: Colors.grey),
-                                    ),
-                                    Text(
-                                      'English',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                ),
+                              const Column(
+                                children: [
+                                  Text(
+                                    'Language',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.grey),
+                                  ),
+                                  Text(
+                                    'English',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
                               )
                             ],
                           ),
@@ -184,9 +176,9 @@ class BookDetailUI extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding:
-                      const EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
+                      EdgeInsets.only(top: 10.0, left: 30.0, right: 30.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -194,7 +186,7 @@ class BookDetailUI extends StatelessWidget {
                         'Book Detail',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Container(
+                      SizedBox(
                         height: 200,
                         child: Text(
                             'Lorem ipsum dolor sit amet, consectetur adipiscing e'
@@ -223,20 +215,20 @@ class BookDetailUI extends StatelessWidget {
       ]),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(left: 30,right: 30,bottom: 10),
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: 60,
           child: Container(
             width: double.infinity,
             height: 60,
-            child: Column(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.indigo[900],),
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Continue', style: TextStyle(color: CupertinoColors.white,fontWeight: FontWeight.bold,fontSize: 20),),
               ],
             ),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.indigo[900],),
           )
         ),
       ),

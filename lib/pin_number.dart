@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 class SampleDemo extends StatefulWidget {
+  const SampleDemo({super.key});
+
   @override
   _SampleDemoState createState() => _SampleDemoState();
 }
@@ -18,13 +20,13 @@ class _SampleDemoState extends State<SampleDemo> {
               initialValue: title,
               textInputAction: TextInputAction.done,
               onFieldSubmitted: (value) {
-                setState(() => {isEditable = false, title = value});
+                setState(() {isEditable = false; title = value;});
               })),
       IconButton(
-        icon: Icon(Icons.edit),
+        icon: const Icon(Icons.edit),
         onPressed: () {
-          setState(() => {
-            isEditable = true,
+          setState(() {
+            isEditable = true;
           });
         },
       )

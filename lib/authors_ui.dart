@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class Authors extends StatelessWidget {
 
-  late String authorImage;
+  final String authorImage;
 
-  Authors(this.authorImage);
+  const Authors(this.authorImage, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,9 @@ class Authors extends StatelessWidget {
       width: 75,
       decoration: BoxDecoration(
           image: DecorationImage(fit: BoxFit.fill,
-            image: AssetImage('$authorImage'),
+            image: AssetImage(authorImage),
           ),
-          borderRadius: BorderRadius.all(Radius.circular(100.0))),
+          borderRadius: const BorderRadius.all(Radius.circular(100.0))),
     );
   }
 }
