@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+
 class SampleDemo extends StatefulWidget {
   const SampleDemo({super.key});
 
   @override
-  _SampleDemoState createState() => _SampleDemoState();
+  State<SampleDemo> createState() => _SampleDemoState();
 }
 
 class _SampleDemoState extends State<SampleDemo> {
   String title = "MyTitle";
-  bool isEditable=false;
+  bool isEditable = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +18,14 @@ class _SampleDemoState extends State<SampleDemo> {
           child: !isEditable
               ? Text(title)
               : TextFormField(
-              initialValue: title,
-              textInputAction: TextInputAction.done,
-              onFieldSubmitted: (value) {
-                setState(() {isEditable = false; title = value;});
-              })),
+                  initialValue: title,
+                  textInputAction: TextInputAction.done,
+                  onFieldSubmitted: (value) {
+                    setState(() {
+                      isEditable = false;
+                      title = value;
+                    });
+                  })),
       IconButton(
         icon: const Icon(Icons.edit),
         onPressed: () {
